@@ -16,17 +16,17 @@
 	return View::make('hello');
 });*/
 Route::get('/', function(){
-	
+	return Redirect::to('thread');
 });
 Route::get('users', function(){
 	return View::make('users');
 });
 
 //Routes below are for project
-Route::get('thread', function(){
+Route::get('thread', array('as'=>'thread', function(){
 	$threads = Thread::all();
 	return View::make('thread')->with('threads', $threads);
-});
+}));
 
 Route::get('thread/{id}', array('as'=>'thread.id',  function($id){
 	$posts = Post::where('t_id', '=', $id)->get();//($id)->post;
