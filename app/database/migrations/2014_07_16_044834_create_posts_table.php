@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration {
 			$table->timestamps();
 			$table->integer('t_id')->unsigned();
 			$table->index('t_id');
-			$table->foreign('t_id')->references('t_id')->on('threads');
+			$table->foreign('t_id')->references('t_id')->on('threads')->ondelete('cascade');
 
 		});
 	}
