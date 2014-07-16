@@ -6,6 +6,24 @@
         * {
             font-family: 'Open Sans', sans-serif;
         }
+        a:link {
+            color: #000;
+        }
+
+        /* visited link */
+        a:visited {
+            color: #000;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: #000;
+        }
+
+        /* selected link */
+        a:active {
+            color: #000;
+        }
 		body {
 			background-color: #ff8500;
             
@@ -69,24 +87,7 @@
             color: #bfbfbf;
             width: 100%;
         }
-        a:link {
-            color: #FFF;
-        }
-
-        /* visited link */
-        a:visited {
-            color: #FFF;
-        }
-
-        /* mouse over link */
-        a:hover {
-            color: #FFF;
-        }
-
-        /* selected link */
-        a:active {
-            color: #FFF;
-        }
+        
 	</style>
 	<title>
 		Public Board
@@ -97,10 +98,4 @@
 		@yield('content')
 	</div>
 </body>
-</html> 
-<!--html>
-	<body>
-		<h1>Simple Board</h1>
-		@yield('content')
-	</body>
-</html-->
+</html>
