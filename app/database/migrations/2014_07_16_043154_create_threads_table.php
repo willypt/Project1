@@ -12,10 +12,12 @@ class CreateThreadsTable extends Migration {
 	 */
 	public function up()
 	{
+		
 		Schema::create('threads', function($table){
 			$table->increments('t_id');
 			$table->string('title');
 			$table->timestamp('created_at');
+
 		});
 	}
 
@@ -26,7 +28,7 @@ class CreateThreadsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::drop('threads');
 	}
 
 }

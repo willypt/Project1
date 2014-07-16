@@ -27,7 +27,10 @@ Route::get('thread', function(){
 	$threads = Thread::all();
 	return View::make('thread')->with('threads', $threads);
 });
-Route::get('thread/{id}', function(){
-	$threads = Thread::all();
-	return View::make('thread')->with('threads', $threads);
+
+Route::get('thread/{id}', function($id){
+	$posts = Post::where('t_id', '=', $id)->get();//($id)->post;
+
+	//return ($posts)? print_r($posts): "Data not found";
+	return View::make('thread_detail')->with('posts', $posts);
 });

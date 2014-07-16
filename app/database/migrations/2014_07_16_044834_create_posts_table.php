@@ -17,7 +17,10 @@ class CreatePostsTable extends Migration {
 			$table->string('name', 100)->default('');
 			$table->text('post_content');
 			$table->timestamps();
+			$table->integer('t_id')->unsigned();
+			$table->index('t_id');
 			$table->foreign('t_id')->references('t_id')->on('threads');
+
 		});
 	}
 
