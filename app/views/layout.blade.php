@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<h1>Laravel Quickstart</h1>
+		<h1>Simple Board</h1>
 		@yield('content')
 	</body>
 </html>

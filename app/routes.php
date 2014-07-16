@@ -11,10 +11,23 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
+});*/
+Route::get('/', function(){
+	
 });
 Route::get('users', function(){
 	return View::make('users');
+});
+
+//Routes below are for project
+Route::get('thread', function(){
+	$threads = Thread::all();
+	return View::make('thread')->with('threads', $threads);
+});
+Route::get('thread/{id}', function(){
+	$threads = Thread::all();
+	return View::make('thread')->with('threads', $threads);
 });
