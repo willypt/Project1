@@ -2,7 +2,7 @@
 <html>
 <head>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<style>
+    <style>
         * {
             font-family: 'Open Sans', sans-serif;
         }
@@ -24,10 +24,10 @@
         a:active {
             color: #000;
         }
-		body {
-			background-color: #ff8500;
+        body {
+            background-color: #ff8500;
             
-		}
+        }
         #wrapper {
             margin: 0 auto;
         }
@@ -87,8 +87,20 @@
             color: #bfbfbf;
             width: 100%;
         }
+        .input-wrap {
+            width: 100%;
+            
+        }
+        .input-wrap label, .input-wrap input, .input-wrap textarea {
+            width: 100%;
+            display: inline-block;
+        }
+        .input-wrap textarea {
+            min-height: 50px;
+            max-width: 100%;
+        }
         
-	</style>
+    </style>
 	<title>
 		Public Board
 	</title>

@@ -24,11 +24,16 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function(){
+	$thishost = gethostname();
+	$local = array('WILLY-PC');
 
-	'local' => array('localhost', '127.0.0.1'),
+	foreach ($local as $k => $v) {
+		if($k == $thishost) return 'local';
+	}
 
-));
+	return 'production';
+});
 
 /*
 |--------------------------------------------------------------------------

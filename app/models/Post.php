@@ -5,9 +5,4 @@
 			return $this->belongsTo('Thread', 't_id');
 		}
 
-		public function formattedUpdatedAt(){
-			$x = strtotime($this->updated_at);
-			return date("H:i a, d-M-Y");
-		}
-
 	}
