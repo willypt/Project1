@@ -25,7 +25,7 @@
             color: #000;
         }
         body {
-            background-color: #ff8500;
+            background-color: rgb(243, 76, 61);
             
         }
         #wrapper {
@@ -44,11 +44,8 @@
            // min-height: 200px;
             text-align: justify
         }
-        .first {
-            margin-top: 50px;
-            
-        }
-        h1 {
+       
+        h3 {
             margin-top: 0;
             width: 60%;
             height: 40px;
@@ -99,6 +96,13 @@
             min-height: 50px;
             max-width: 100%;
         }
+        .input-wrap span {
+            font-size: small;
+            color: red;
+        }
+        .header {
+            background-color: rgb(243, 76, 61);
+        }
         
     </style>
 	<title>
@@ -107,6 +111,12 @@
 </head>
 <body>
 	<div id="wrapper">
+        <a href="{{ URL::route('thread') }}">
+            <div class="card header">
+                <img src="http://willypt.com/images/logo.png" width='100%'/>
+            </div>
+        </a>
+
 		@yield('content')
 	</div>
 </body>

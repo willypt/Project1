@@ -16,7 +16,7 @@ class CreateThreadsTable extends Migration {
 		Schema::create('threads', function($table){
 			$table->increments('t_id');
 			$table->string('title');
-			$table->timestamp('created_at');
+			$table->timestamps();
 
 		});
 	}
