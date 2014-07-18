@@ -12,5 +12,4 @@
 			);
 			return Validator::make($input, $rules);
 		}
-
 	}

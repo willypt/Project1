@@ -99,3 +99,8 @@ hr {
 .header {
     background-color: rgb(243, 76, 61);
 }
+#maincontent {
+    min-height: 50px;
+    width: 474px;
+    margin: 0 auto;
+}

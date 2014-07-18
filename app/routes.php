@@ -24,23 +24,36 @@ Route::get('users', function(){
 
 //Routes below are for project
 Route::get('thread', array('as'=>'thread', function(){
-	$threads = Thread::all();
-	return View::make('thread')->with('threads', $threads);
+	if(Request::ajax()){
+		//request ajax
+		$threads = Thread::all();
+		
+		return $threads;
+	} else{
+		//request get
+		//return View::make('thread')->with('threads', $threads);	
+		return View::make('thread');
+	}
+	
 }));
-
-  	
 Route::get('thread/{id}', array('as'=>'thread.id',  function($id){
 	if(!isset($id)){
 		return Redirect::to('thread');
 	}
-	$posts = Post::where('t_id', '=', $id)->get();//($id)->post;
+	
 	$thread = Thread::find($id);
-	//return ($posts)? print_r($posts): "Data not found";
-	if(count($thread) == 0 || count($posts) == 0){
+	if(count($thread) == 0){
 		return Redirect::to('thread');
 	}
-	return View::make('thread_detail')->with('posts', $posts)->with('thread', $thread);
+	
+	if(Request::ajax()){
+		$posts = Post::where('t_id', '=', $id)->get();//($id)->post;
+		return $posts;
+	}
+	
+	return View::make('thread_detail')->with('thread', $thread);
 }));
+
 Route::post('addthread', function(){
 	$p = Input::all();
 	$v = Thread::validate($p);
