@@ -6,7 +6,7 @@
 		}
 		public static function validate($input){
 			$rules = array(
-				'Name' => 'Required|Min:3|Max:20|Alpha',
+				'Name' => 'Required|Min:1|Max:20|Alpha',
 				'T_Id' => 'Required|Min:1',
 				'Reply' => 'Required|Min:10'
 			);
