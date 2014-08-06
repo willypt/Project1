@@ -17,10 +17,29 @@ App::before(function($request)
 });
 
 
+//https://gist.github.com/zmsaunders/5619519
 App::after(function($request, $response)
 {
-	//
+	// HTML Minification
+	if(App::Environment() != 'local' )
+	{
+		if($response instanceof Illuminate\Http\Response)
+		{
+			$output = $response->getOriginalContent();
+ 
+			// Clean comments
+			$output = preg_replace('/<!--([^\[|(<!)].*)/', '', $output);
+			$output = preg_replace('/(?<!\S)\/\/\s*[^\r\n]*/', '', $output);
+ 
+			// Clean Whitespace
+			$output = preg_replace('/\s{2,}/', '', $output);
+			$output = preg_replace('/(\r?\n)/', '', $output);
+ 
+			$response->setContent($output);
+		}
+	}
 });
+
 
 /*
 |--------------------------------------------------------------------------

@@ -23,19 +23,21 @@ $app = new Illuminate\Foundation\Application;
 | given environment, then we will automatically detect it for you.
 |
 */
-
+/*
 $env = $app->detectEnvironment(array(
-	/*$thishost = gethostname();
-	$local = array('WILLY-PC');
-
-	foreach ($local as $k => $v) {
-		if($k == $thishost) return 'local';
+    'local' => ['*.dev', gethostname()],
+    'production' => ['*.com', '*.net', '*.org']
+));
+*/
+$env = $app->detectEnvironment(function(){
+	if($_SERVER['SERVER_NAME'] =='localhost'){
+		return 'local';
+	} else if($_SERVER['SERVER_NAME'] == 'willypt.com'){
+		return  'willypt';
+	} else {
+		return 'production';
 	}
-
-	return 'production';*/
-	'local' => array('WILLY-PC')
-	));
-
+});
 /*
 |--------------------------------------------------------------------------
 | Bind Paths

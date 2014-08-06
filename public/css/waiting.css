@@ -28,7 +28,7 @@
 .waiting-indicator {
   width: 16px;
   height: 16px;
-  background: url("../images/ajax-loader-white.gif");
+  background: url("../../images/ajax-loader-white.gif");
 }
 .waiting-indicator.center, .waiting-indicator.top, .waiting-indicator.bottom {
   position: absolute;

@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{HTML::style('css/style.css')}}
-    {{HTML::style('css/waiting.css')}}
-    {{HTML::script('//code.jquery.com/jquery-1.11.0.min.js')}}
-    {{HTML::script('js/jquery.waiting.min.js')}}
-    {{HTML::script('js/jquery.dateFormat.min.js')}}
-	<title>
-		Public Board
-	</title>
+  <title>
+    Public Board
+  </title>
+
+    {{ Minify::stylesheet(['/css/style.css', '/css/waiting.css'], array('async'))}}
+
 </head>
 <body>
-	<div id="wrapper">
+  <div id="wrapper">
         <a href="{{ URL::route('thread') }}">
             <div class="card header">
-                <img src="http://willypt.com/images/logo.png" width='100%'/>
+                <img src="http://willypt.com/images/logo.png" width='450px' height='117px'/>
             </div>
         </a>
         <div id="maincontent">
@@ -28,14 +26,18 @@
             @yield('post_form')
         @endif
 
-	</div>
+  </div>
 
 
-   <script type="text/javascript">
+   {{Minify::javascript(['/js/jquery-1.11.0.min.js', '/js/jquery.waiting.min.js', '/js/jquery.dateFormat.min.js'])}}
+   <script type="text/javascript" defer>
    $(function () {
         $("#maincontent").waiting();
    });
    </script>
    @yield('content')
+
+
+
 </body>
 </html>

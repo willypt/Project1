@@ -22,10 +22,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'simpleboard',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => 'mysql.idhostinger.com',
+			'database'  => 'u318946367_fj',
+			'username'  => 'u318946367_fj',
+			'password'  => 'fivejack',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
